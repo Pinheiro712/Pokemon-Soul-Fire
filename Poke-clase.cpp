@@ -59,7 +59,7 @@ public:
 
 };
 
-bool existe(const vector<string>& pokedex, string nome){
+bool Consulta(const vector<string>& pokedex, string nome){
         transform(nome.begin(), nome.end(), nome.begin(), ::tolower);
 
         for(const auto& p : pokedex){
@@ -77,15 +77,16 @@ bool existe(const vector<string>& pokedex, string nome){
 
 int main(){
     string nomeUsuario;
-    cout << "Digite o nome do pokemon: ";
-    getline(cin , nomeUsuario);
-
-    if (existe(Pokedex, nomeUsuario)){
-        cout << "Pokemon encontrado: "<< nomeUsuario << endl;
-    
-    }
-    else{
-        cout << "pokemon : " << nomeUsuario << "nao foi encontrado, tente novamente. "<< endl;
+    while (nomeUsuario != "0"){
+        cout << "Digite o nome do pokemon: ";
+        getline(cin , nomeUsuario);
+        if (Consulta(Pokedex, nomeUsuario)){
+            cout << "Pokemon encontrado: "<< nomeUsuario << endl;
+        
+        }
+        else{
+            cout << "O pokemon (" << nomeUsuario << ") nao foi encontrado, tente novamente. "<< endl;
+        }
     }
     return 0;
 }
