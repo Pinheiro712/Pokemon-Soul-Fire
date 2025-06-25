@@ -22,6 +22,7 @@ struct stats{
     int ataque;
     int especialataq;
     int especialdefesa;
+    int speed;
 
 };
 
@@ -32,13 +33,14 @@ private:
     stats stats;    
 
 public:
-    Pokemon(string n, int hp, int atk, int def, int espa, int espd){
+    Pokemon(string n, int hp, int atk, int def, int espa, int espd, int spd){
         nome = n; 
         stats.hp = hp;
         stats.ataque = atk;
         stats.defesa = def;
         stats.especialataq = espa;
         stats.especialdefesa = espd;
+        stats.speed = spd;
     }
 
     void mostrarpkm(){
@@ -48,7 +50,7 @@ public:
         cout<<"Defesa: " << stats.defesa << endl;
         cout<<"Ataque Especial: " << stats.especialataq << endl;
         cout<<"Defesa Especial: " << stats.especialdefesa << endl;
-
+        cout<<"Velocidade: "<< stats.speed << endl;
 
     };
 
@@ -74,19 +76,3 @@ bool Consulta(const vector<string>& pokedex, string nome){
      }
 
      
-
-int main(){
-    string nomeUsuario;
-    while (nomeUsuario != "0"){
-        cout << "Digite o nome do pokemon: ";
-        getline(cin , nomeUsuario);
-        if (Consulta(Pokedex, nomeUsuario)){
-            cout << "Pokemon encontrado: "<< nomeUsuario << endl;
-        
-        }
-        else{
-            cout << "O pokemon (" << nomeUsuario << ") nao foi encontrado, tente novamente. "<< endl;
-        }
-    }
-    return 0;
-}
