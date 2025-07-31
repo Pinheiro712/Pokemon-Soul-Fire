@@ -1,8 +1,8 @@
-#include "Pokemon.H"
+#include "Pokemon.h"
 #include <vector>
 
 
-vector<Pokemon> Pokedex = {
+std::vector<Pokemon> Pokedex = {
     // Geração 1
     Pokemon("Bulbasaur", 1, 45, 49, 49, 65, 65, 45),
     Pokemon("Ivysaur", 1, 60, 62, 63, 80, 80, 60),
