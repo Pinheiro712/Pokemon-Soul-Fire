@@ -1,4 +1,4 @@
-#include "Batalha.h"
+/*#include "Batalha.h"
 #include <iostream>
 
 Batalha::Batalha(Pokemon* jogador1, Pokemon* jogador2){
@@ -17,3 +17,6 @@ void Batalha::iniciar() {
 
 
 #endif
+
+
+*/

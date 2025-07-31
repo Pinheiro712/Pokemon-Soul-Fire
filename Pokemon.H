@@ -26,7 +26,6 @@ class Pokemon{
         void mostrar();
         void Dano(int dano);
         void calculostats();
-        void defstatus();
 
 };
 
