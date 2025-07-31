@@ -65,13 +65,8 @@ public:
     else if (efeito_total < 1.0) {
         return "Nao foi muito efetivo...";
     }
-    else if (efeito_total == 1.0) {
-        return "Ataque normal.";
-    }
     else if (efeito_total > 1.0) {
         return "Super efetivo !";
-    }
-
-    return "Resultado desconhecido.";
+    }       
     }
 };
