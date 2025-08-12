@@ -1,35 +1,16 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm> 
+#include "moves.h"
+
 using namespace std;
 
+Move::Move() : nome(""), tipo(""), power(0), accuracy(0), categoria("") {}
 
+Move::Move(string nome, string tipo, int power, int accuracy, string categoria)
+    : nome(nome), tipo(tipo), power(power), accuracy(accuracy), categoria(categoria) {}
 
-/*programando ouvindo 钢铁洪流进行曲  */
-class moves {
-    private:
-    string nome;
-    string tipo;
-    int danobase;/*sem modificadores como tipo e ataque do pkm*/
-    int pp;/*vezes que ele pode usar*/
-    int accuracy;/*precisao 0-100*/
-    string category;/* status, fisico ou especial*/
+string Move::getNome() const { return nome; }
+string Move::getTipo() const { return tipo; }
+int Move::getPower() const { return power; }
+int Move::getAccuracy() const { return accuracy; }
+string Move::getCategoria() const { return categoria; }
 
-
-    public:
-    /*construtor*/
-    moves(string n , string t, int db, int pp, int a, string c)
-       : nome(n), tipo(t), danobase(db), accuracy(a), category(c), pp(pp){}
-
-       /*getters*/
-       string getNome() const { return nome; }
-       string getTipo() const { return tipo; }
-       int getDanoBase() const { return danobase; }
-       int getPP() const { return pp; }
-       int getAccuracy() const { return accuracy; }
-       string getCategory() const { return category; }
-
-    void use() { pp--; } // Reduz PP ao usar o movimento
-};
 

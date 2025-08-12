@@ -6,6 +6,8 @@
 #include <sstream>
 using namespace std;
 
+//Расцветали яблони и груши
+
 class Typeadv {
 private:
     vector<string> tipos;
@@ -40,33 +42,59 @@ public:
     }
 
     string calculodano(string atacante, vector<string> atingido) {
-    // Verifica se o tipo atacante existe
-    if (indice.find(atacante) == indice.end()) {
-        return "Tipo atacante invalido!";
-    }
-    int i = indice[atacante];
-    
-    double efeito_total = 1.0;
-    
-    // Verifica cada tipo do pokemon atingido
-    for (string tipo : atingido) {
-        // Verifica se o tipo atingido existe
-        if (indice.find(tipo) == indice.end()) {
-            return "Tipo atingido invalido!";
+        // Verifica se o tipo atacante existe
+        if (indice.find(atacante) == indice.end()) {
+            return "Tipo atacante invalido!";
         }
-        int j = indice[tipo];
-        efeito_total *= matriz[i][j];
-    }
+        int i = indice[atacante];
+        
+        double efeito_total = 1.0;
+        
+        // Verifica cada tipo do pokemon atingido
+        for (string tipo : atingido) {
+            // Verifica se o tipo atingido existe
+            if (indice.find(tipo) == indice.end()) {
+                return "Tipo atingido invalido!";
+            }
+            int j = indice[tipo];
+            efeito_total *= matriz[i][j];
+        }
 
-    // Determina a mensagem com base no efeito total
-    if (efeito_total == 0.0) {
-        return "O ataque nao afeta o pokemon atingido...";
+        // Determina a mensagem com base no efeito total
+        if (efeito_total == 0.0) {
+            return "O ataque nao afeta o pokemon atingido...";
+        }
+        else if (efeito_total < 1.0) {
+            return "Nao foi muito efetivo...";
+        }
+        else if (efeito_total > 1.0) {
+            return "Super efetivo !";
+        }
+        else {
+            return "Efetivo normal";
+        }
     }
-    else if (efeito_total < 1.0) {
-        return "Nao foi muito efetivo...";
-    }
-    else if (efeito_total > 1.0) {
-        return "Super efetivo !";
-    }       
+    
+    // Função para obter o multiplicador numérico
+    double getMultiplicador(string atacante, vector<string> atingido) {
+        // Verifica se o tipo atacante existe
+        if (indice.find(atacante) == indice.end()) {
+            return 1.0;
+        }
+        int i = indice[atacante];
+        
+        double efeito_total = 1.0;
+        
+        // Verifica cada tipo do pokemon atingido
+        for (string tipo : atingido) {
+            // Verifica se o tipo atingido existe
+            if (indice.find(tipo) == indice.end()) {
+                return 1.0;
+            }
+            int j = indice[tipo];
+            efeito_total *= matriz[i][j];
+        }
+        
+        return efeito_total;
     }
 };

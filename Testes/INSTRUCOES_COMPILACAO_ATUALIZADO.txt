@@ -1,0 +1,98 @@
+INSTRUÇÕES DE COMPILAÇÃO - SISTEMA DE BATALHA POKÉMON
+========================================================
+
+Este arquivo contém as instruções para compilar e executar o sistema de batalha Pokémon.
+
+REQUISITOS:
+- Compilador C++ com suporte a C++11 ou superior (g++, clang++, Visual Studio)
+- Todos os arquivos fonte devem estar no mesmo diretório
+
+ARQUIVOS NECESSÁRIOS PARA COMPILAÇÃO:
+- batalha.h e batalha.cpp (sistema principal de batalha)
+- pokemon.h e pokemon.cpp (classe Pokémon)
+- moves.h e moves.cpp (sistema de ataques)
+- Lista_de_moves.cpp (lista de ataques disponíveis)
+- pokedex.cpp (base de dados de Pokémon)
+- Tipagem.cpp (sistema de tipos e vantagens)
+
+COMPILAÇÃO BÁSICA:
+==================
+
+1. COMPILAR O SISTEMA PRINCIPAL:
+   g++ -o batalha_teste.exe exemplo_batalha.cpp batalha.cpp pokemon.cpp moves.cpp pokedex.cpp Lista_de_moves.cpp -std=c++11
+
+2. COMPILAR O TESTE SIMPLES:
+   g++ -o teste_simples.exe teste_batalha_simples.cpp batalha.cpp pokemon.cpp moves.cpp pokedex.cpp Lista_de_moves.cpp -std=c++11
+
+3. COMPILAR A DEMONSTRAÇÃO:
+   g++ -o demo_batalha.exe demo_batalha.cpp batalha.cpp pokemon.cpp moves.cpp pokedex.cpp Lista_de_moves.cpp -std=c++11
+
+EXECUÇÃO:
+=========
+
+1. SISTEMA PRINCIPAL:
+   ./batalha_teste.exe
+
+2. TESTE SIMPLES:
+   ./teste_simples.exe
+
+3. DEMONSTRAÇÃO:
+   ./demo_batalha.exe
+
+NOTAS IMPORTANTES:
+==================
+
+- Sempre inclua o arquivo Lista_de_moves.cpp na compilação
+- Use a flag -std=c++11 para compatibilidade
+- Todos os arquivos .cpp devem ser compilados juntos
+- O sistema foi testado com g++ no Windows
+
+SOLUÇÃO DE PROBLEMAS:
+=====================
+
+1. ERRO: "undefined reference to moveList"
+   SOLUÇÃO: Certifique-se de incluir Lista_de_moves.cpp na compilação
+
+2. ERRO: "Tipagem.cpp not found"
+   SOLUÇÃO: Verifique se o arquivo Tipagem.cpp está no diretório
+
+3. ERRO: "pokedex.cpp not found"
+   SOLUÇÃO: Verifique se o arquivo pokedex.cpp está no diretório
+
+4. ERRO: "C++11 features not supported"
+   SOLUÇÃO: Use um compilador mais recente ou adicione -std=c++11
+
+EXEMPLO DE COMPILAÇÃO COMPLETA:
+===============================
+
+# Compilar todos os arquivos necessários
+g++ -o sistema_completo.exe \
+    exemplo_batalha.cpp \
+    batalha.cpp \
+    pokemon.cpp \
+    moves.cpp \
+    pokedex.cpp \
+    Lista_de_moves.cpp \
+    -std=c++11
+
+# Executar
+./sistema_completo.exe
+
+ARQUIVOS DE TESTE DISPONÍVEIS:
+==============================
+
+1. exemplo_batalha.cpp - Sistema completo com 4 vs 5 Pokémon
+2. teste_batalha_simples.cpp - Teste simples com 2 vs 2 Pokémon
+3. demo_batalha.cpp - Demonstração completa com informações detalhadas
+
+RECOMENDAÇÃO:
+=============
+
+Para testar o sistema pela primeira vez, use:
+./teste_simples.exe
+
+Para uma demonstração completa, use:
+./demo_batalha.exe
+
+Para o sistema completo, use:
+./batalha_teste.exe

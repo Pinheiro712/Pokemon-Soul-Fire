@@ -1,0 +1,36 @@
+INSTRUÇÕES PARA COMPILAR O SISTEMA DE BATALHA POKÉMON
+========================================================
+
+MÉTODO 1 - Usando o arquivo batch (mais fácil):
+1. Clique duas vezes no arquivo "COMPILAR_BATALHA.bat"
+2. Aguarde a compilação terminar
+3. Execute o programa com: batalha_teste.exe
+
+MÉTODO 2 - Usando linha de comando:
+1. Abra o PowerShell ou Prompt de Comando
+2. Navegue até a pasta do projeto
+3. Execute o comando:
+   g++ -o batalha_teste.exe exemplo_batalha.cpp batalha.cpp Tipagem.cpp pokedex.cpp Lista_de_moves.cpp Pokemon.cpp Moves.cpp -std=c++11
+
+ARQUIVOS NECESSÁRIOS PARA COMPILAÇÃO:
+- exemplo_batalha.cpp (arquivo principal)
+- batalha.h e batalha.cpp (sistema de batalha)
+- Tipagem.cpp (tabela de tipos)
+- pokedex.h e pokedex.cpp (lista de Pokémon)
+- moves.h e Moves.cpp (classe Move)
+- Lista_de_moves.cpp (lista de ataques)
+- pokemon.h e Pokemon.cpp (classe Pokémon)
+
+REQUISITOS:
+- Compilador C++ (g++ recomendado)
+- Padrão C++11 ou superior
+
+PROBLEMAS COMUNS:
+1. "g++ não é reconhecido": Instale o MinGW ou outro compilador C++
+2. "Erro de definição múltipla": Verifique se não está incluindo arquivos .cpp em headers
+3. "Referência indefinida": Verifique se todos os arquivos .cpp estão sendo compilados
+
+APÓS A COMPILAÇÃO:
+- O arquivo executável será: batalha_teste.exe
+- Execute-o para testar o sistema de batalha
+- O programa permitirá escolher Pokémon e ver batalhas automáticas
